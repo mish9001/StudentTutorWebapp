@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <title>OrderedDict Table</title>
+
+
+  <style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			text-align: center;
+		}
+		th, td {
+			padding: 8px;
+			border: 1px solid black;
+		}
+	</style>
+
+
+
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Key</th>
+                <th>Account Holders Name</th>
+                <th>Account Number</th>
+                <th>Bank Name</th>
+                <th>Branch</th>
+               
+      </tr>
+    </thead>
+    <tbody>
+      {% for key, values in orderedfinance.items() %}
+          <tr>
+              <td>{{ key }}</td>
+              {% for key, value in values.items() %}
+                  <td>{{ value }}</td>
+              {% endfor %}
+          </tr>
+      {% endfor %}
+  </tbody>
+  </table>
+</body>
+</html>
